@@ -1,0 +1,5 @@
+alias ll='ls -la'
+alias pp='cat /sys/class/drm/card0/device/power_profile'
+alias pacaur='pacaur --noedit'
+alias repo='$HOME/bin/repo'
+alias gt='gnome-terminal'
