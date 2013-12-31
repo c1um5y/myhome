@@ -1,0 +1,13 @@
+[user]
+	email = korneljenei@gmail.com
+	name = Kornel Jenei
+[color]
+	ui = auto
+[alias]
+	co = checkout
+	st = status
+	br = branch
+[push]
+	default = matching
+[core]
+	editor = vim
