@@ -1,13 +1,9 @@
+[alias]
+	st = status
+	co = checkout
+	br = branch
 [user]
 	email = korneljenei@gmail.com
-	name = Kornel Jenei
-[color]
-	ui = auto
-[alias]
-	co = checkout
-	st = status
-	br = branch
-[push]
-	default = matching
+	name = c1um5y
 [core]
 	editor = vim

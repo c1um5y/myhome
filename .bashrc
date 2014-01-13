@@ -12,7 +12,7 @@ if [ -f /usr/share/git/completion/git-prompt.sh ]; then
         source /usr/share/git/completion/git-prompt.sh
 fi
 export GIT_PS1_SHOWDIRTYSTATE=1
-PS1='\e[1;31m#\@#\e[m\e[1;36m[\u@\h \w]\e[1;34m\[$(__git_ps1)\e[m\n $ '
+PS1='\e[1;31m#\@#\e[m\e[1;35m[\u@\h \w]\e[1;34m\[$(__git_ps1)\e[m\n $ '
 #PS1='\e[1;33m[\u@\h \w]\e[m\n $ '
 #PS1='[\u@\h \w] $ '
 
