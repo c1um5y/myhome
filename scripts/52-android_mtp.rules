@@ -1,0 +1,28 @@
+# Galaxy Nexus 16 GB
+#SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e40", MODE="0666" # Bootloader
+#SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d001", MODE="0666" # Recovery
+#SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e43", MODE="0666" # PTP media, USB debug off
+#SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e44", MODE="0666" # PTP media, USB debug on
+SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="685c", MODE="0666" # MTP media, USB debug off
+#SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e42", MODE="0666" # MTP media, USB debug on
+
+# Galaxy Nexus 16 GB auto mount & unmount
+#ENV{ID_MODEL}=="Galaxy_Nexus", ENV{ID_MODEL_ID}=="685c", ACTION=="add", RUN+="/usr/bin/sudo -b -u yourlogin /usr/local/sbin/go-mtpfs -allow-other=true /media/Nexus7" # MTP media, USB debug off
+#ENV{ID_MODEL}=="Galaxy_Nexus", ENV{ID_MODEL_ID}=="4e42", ACTION=="add", RUN+="/usr/bin/sudo -b -u yourlogin /usr/local/sbin/go-mtpfs -allow-other=true /media/Nexus7" # MTP media, USB debug on
+#ENV{ID_MODEL}=="Galaxy_Nexus", ENV{ID_MODEL_ID}=="685c", ACTION=="remove", RUN+="/bin/umount /media/Nexus7" # MTP media, USB debug off
+#ENV{ID_MODEL}=="Galaxy_Nexus", ENV{ID_MODEL_ID}=="4e42", ACTION=="remove", RUN+="/bin/umount /media/Nexus7" # MTP media, USB debug on
+
+ENV{ID_MODEL}=="Galaxy_Nexus", ENV{ID_MODEL_ID}=="685c", ACTION=="add", RUN+="/usr/bin/sudo -b -u kornel touch /home/kornel/aaaaaaaa" # MTP media, USB debug off
+ENV{ID_MODEL}=="Galaxy_Nexus", ENV{ID_MODEL_ID}=="685c", ACTION=="remove", RUN+="sh -c '/home/kornel/scripts/mtp_disconnect.sh gnex'" # MTP media, USB debug off
+
+Nexus 7 (2013) 32 GB
+#SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e40", MODE="0666" # Bootloader
+#SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d001", MODE="0666" # Recovery
+#SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e43", MODE="0666" # PTP media, USB debug off
+#SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e44", MODE="0666" # PTP media, USB debug on
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee1", MODE="0666" # MTP media, USB debug off
+#SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e42", MODE="0666" # MTP media, USB debug on
+
+Nexus 7 (2013) 32 GB auto mount & unmount
+ENV{ID_MODEL}=="Nexus_7", ENV{ID_MODEL_ID}=="4ee1", ACTION=="add", RUN+="/home/kornel/scripts/mtp_connect.sh nexus7" # MTP media, USB debug off
+ENV{ID_MODEL}=="Nexus_7", ENV{ID_MODEL_ID}=="4ee1", ACTION=="remove", RUN+="/home/kornel/scripts/mtp_disconnect.sh nexus7" # MTP media, USB debug off

@@ -6,5 +6,5 @@ if [ "$(ls -A $NEXUS_DIR)" ];
 then
 	fusermount -u $NEXUS_DIR
 else
-	go-mtpfs $NEXUS_DIR
+	jmtpfs $NEXUS_DIR
 fi
